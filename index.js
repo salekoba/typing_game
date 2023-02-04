@@ -14,6 +14,7 @@ let questionNum;
 let missCount = 0;
 let checkTexts = [];
 let correctCount = 0;
+//中断したかどうかの判断を行うフラグ
 let retireFlag = 0;
 
 //文字列の生成
@@ -26,7 +27,7 @@ function generateCharacter(questionNum) {
 //初期ページの部分生成
 function pageCreate() {
   count = 1;
-  text.textContent = "ここに文字が表示されるよ";
+  text.textContent = "ここに文字列が表示されるよ";
 }
 //入力値の取得
 function getNum() {
@@ -45,12 +46,15 @@ function createCharacter() {
   });
 }
 
-//入力値の取得、判定
+//入力値の判定
 function keyUp(e) {
   if (e.key === checkTexts[0].textContent) {
     correctCount++;
+    //入力した文字が一致した時に色を変更する
     checkTexts[0].className = "add-blue";
+    //先頭の文字の削除
     checkTexts.shift();
+    //全て入力し終わった後の画面の要素の生成
     if (checkTexts.length == 0) {
       count++;
       createTitle();
@@ -60,10 +64,8 @@ function keyUp(e) {
       }
       createCharacter();
     }
-    console.log(checkTexts[0]);
   } else {
     missCount++;
-
     alert(missCount + "回目のミスだよ");
   }
 }
