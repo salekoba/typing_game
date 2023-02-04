@@ -59,8 +59,9 @@ function keyUp(e) {
       count++;
       createTitle();
       if (count > questionNum) {
+        //最後までクリアした場合、フラグで判別し、retireButtonを呼び出す
         retireFlag++;
-        stopButton();
+        retireButton();
       }
       createCharacter();
     }
@@ -88,7 +89,6 @@ function startButton() {
     button1.style.display = "none";
     button2.style.display = "inline";
     text.style.display = "block";
-    text.style.visibility = "visible";
     timer.style.display = "none";
     text.textContent = "";
     startTime = new Date();
@@ -98,15 +98,13 @@ function startButton() {
 }
 
 //ストップボタンの機能作成
-function stopButton() {
+function retireButton() {
   title.textContent =
     count - 1 + "問で終了" + " " + missCount + "回のタイピングミス";
   text.style.display = "none";
-  button1.style.display = "none";
   button2.style.display = "none";
   button3.style.display = "inline";
   timer.style.display = "block";
-  timer.style.visibility = "visible";
   endTime = new Date();
   processTime = (endTime - startTime) / 1000;
   displayTime = Math.round(processTime);
@@ -124,13 +122,11 @@ function stopButton() {
 function restartButton() {
   document.getElementById("text1").value = "出題数を入力してね";
   text.textContent = "ここに文字が表示されるよ";
+  text.style.display = "block";
   title.textContent = "タイピングゲーム";
   form.style.display = "block";
   button1.style.display = "inline";
-  button2.style.display = "none";
   button3.style.display = "none";
-  text.style.visibility = "visible";
-  text.style.display = "block";
   timer.textContent = "";
   timer.style.visibility = "visible";
   timer.style.display = "block";
