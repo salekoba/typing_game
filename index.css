@@ -10,8 +10,6 @@
     font-weight: bold;
     color: rgba(0, 0, 255, 0.086);
     text-align: center;
-    
-
 }
 
 #text1 {
@@ -19,7 +17,6 @@
     font-weight: bold;
     color: rgba(0, 0, 255, 0.086);
     text-align: center;
-
 }
 .question {
     width: fit-content;
@@ -31,8 +28,6 @@
     font-weight: bold;
     color: blue;
     text-align: center;
-    
-
 }
 
 span{
@@ -48,16 +43,13 @@ span{
     font-size: 4em;
     font-weight: bold;
     color: rgba(0, 0, 255, 0.086);
-    
-
+    outline: none
 }
 #button2 {
     font-size: 4em;
     font-weight: bold;
     color: rgba(0, 0, 255, 0.086);
     display: none;
-
-    
 }
 
 #button3 {
@@ -69,4 +61,17 @@ span{
 
 .buttons{
     text-align: center;
+    align-items: center;
+    margin: 0 auto;
+    color: rgba(0, 0, 255, 0.086);
+    transition: 0.3s ease-in-out;
+    font-weight: 600;
+    filter: drop-shadow(0px 2px 4px #ccc);
+    border-radius: 3px;
+    border: none;
+
+    
+}
+.buttons:hover{
+    transform: translateY(-2px);
 }

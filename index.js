@@ -14,6 +14,7 @@ let questionNum;
 let missCount = 0;
 let checkTexts = [];
 let correctCount = 0;
+let retireFlag = 0;
 
 //文字列の生成
 function generateCharacter(questionNum) {
@@ -54,6 +55,7 @@ function keyUp(e) {
       count++;
       createTitle();
       if (count > questionNum) {
+        retireFlag++;
         stopButton();
       }
       createCharacter();
@@ -73,6 +75,7 @@ function createTitle() {
 
 //スタートボタンの機能作成
 function startButton() {
+  retireFlag = 0;
   getNum();
   if (isNaN(questionNum)) {
     alert("半角数字を入力してね");
@@ -105,7 +108,12 @@ function stopButton() {
   endTime = new Date();
   processTime = (endTime - startTime) / 1000;
   displayTime = Math.round(processTime);
-  timer.textContent = displayTime + "秒でクリア";
+  if (retireFlag == 0) {
+    timer.textContent = displayTime + "秒でリタイア";
+  } else {
+    timer.textContent = displayTime + "秒でクリア";
+  }
+
   count = 1;
   document.removeEventListener("keyup", keyUp);
 }
