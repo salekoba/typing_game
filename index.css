@@ -1,5 +1,8 @@
 #title {
     text-align: center;
+    font-size: 4em;
+    font-weight: bold;
+    color: blue;
 }
 
 #text {
@@ -11,15 +14,26 @@
 
 }
 
-#timer {
+#text1 {
     font-size: 4em;
     font-weight: bold;
     color: rgba(0, 0, 255, 0.086);
     text-align: center;
+
+}
+.question {
+    width: fit-content;
+    margin: auto;
+}
+
+#timer {
+    font-size: 4em;
+    font-weight: bold;
+    color: blue;
+    text-align: center;
     
 
 }
-
 
 span{
     transition: all 300ms 0s ease;
@@ -41,8 +55,9 @@ span{
     font-size: 4em;
     font-weight: bold;
     color: rgba(0, 0, 255, 0.086);
-    
+    display: none;
 
+    
 }
 
 #button3 {
