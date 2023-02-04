@@ -75,7 +75,7 @@ function createTitle() {
 function startButton() {
   getNum();
   if (isNaN(questionNum)) {
-    alert("数値を入力してね");
+    alert("半角数字を入力してね");
   } else {
     generateCharacter(questionNum);
     createTitle();
