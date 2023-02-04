@@ -8,7 +8,6 @@ let form = document.getElementById("form");
 let startTime;
 let endTime;
 let processTime;
-let startFlag = 0;
 let textLists = [];
 let count = 1;
 let questionNum;
