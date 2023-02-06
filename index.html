@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <title>タイピングゲーム</title>
-</head>
-<body>
-    <p id="title">タイピングゲーム</p>
-    <p id = "text"></p>
-    <form class="question" id="form">
-        <input type="text" value="出題数を入力してね" id="text1" />
-    </form>
-   
-    <p id = "timer"></p>
-    <div class="buttons">
-        <input id="button1" type="button" value="スタート！" onclick="startButton()">
-        <input id="button2" type="button" value="リタイア！" onclick="retireButton()">
-        <input id="button3" type="button" value="もう一回！" onclick="restartButton()">
-    </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="index.css">
+        <title>タイピングゲーム</title>
+    </head>
+    <body>
+        <p id="title">タイピングゲーム</p>
+        <p id = "text"></p>
+        <form class="question" id="form">
+            <input type="text" placeholder="出題数を入力してね" id="text1" />
+        </form>
+    
+        <p id = "timer"></p>
+        <div class="buttons">
+            <input id="button1" type="button" value="スタート！" onclick="startButton()">
+            <input id="button2" type="button" value="リタイア！" onclick="retireButton()">
+            <input id="button3" type="button" value="もう一回！" onclick="restartButton()">
+        </div>
 
-    <script type="text/javascript" src="index.js"></script>
+        <script type="text/javascript" src="index.js"></script>
 
-</body>
+    </body>
 </html>

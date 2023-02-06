@@ -1,4 +1,5 @@
 let text = document.getElementById("text");
+let text1 = document.getElementById("text1");
 let timer = document.getElementById("timer");
 let button1 = document.getElementById("button1");
 let button2 = document.getElementById("button2");
@@ -31,7 +32,7 @@ function pageCreate() {
 }
 //入力値の取得
 function getNum() {
-  questionNum = parseInt(document.getElementById("text1").value, 10);
+  questionNum = parseInt(text1.value, 10);
 }
 
 //生成した文字列から文字の取り出し
@@ -120,7 +121,8 @@ function retireButton() {
 
 //リスタートボタンの機能作成
 function restartButton() {
-  document.getElementById("text1").value = "出題数を入力してね";
+  text1.placeholder = "出題数を入力してね";
+  text1.value = "";
   text.textContent = "ここに文字が表示されるよ";
   text.style.display = "block";
   title.textContent = "タイピングゲーム";
