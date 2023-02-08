@@ -7,20 +7,17 @@ let button3 = document.getElementById("button3");
 let title = document.getElementById("title");
 let form = document.getElementById("form");
 let startTime;
-let endTime;
-let processTime;
 let textLists = [];
 let count = 1;
 let questionNum;
 let missCount = 0;
 let checkTexts = [];
-let correctCount = 0;
 //中断したかどうかの判断を行うフラグ
 let retireFlag = 0;
 
 //文字列の生成
-function generateCharacter(questionNum) {
-  for (let i = 0; i < questionNum; i++) {
+function generateCharacter(num) {
+  for (let i = 0; i < num; i++) {
     textLists[i] = Math.random().toString(32).substring(2);
   }
 }
@@ -29,10 +26,6 @@ function generateCharacter(questionNum) {
 function pageCreate() {
   count = 1;
   text.textContent = "ここに文字列が表示されるよ";
-}
-//入力値の取得
-function getNum() {
-  questionNum = parseInt(text1.value, 10);
 }
 
 //生成した文字列から文字の取り出し
@@ -50,7 +43,6 @@ function createCharacter() {
 //入力値の判定
 function keyUp(e) {
   if (e.key === checkTexts[0].textContent) {
-    correctCount++;
     //入力した文字が一致した時に色を変更する
     checkTexts[0].className = "add-blue";
     //先頭の文字の削除
@@ -80,7 +72,7 @@ function createTitle() {
 //スタートボタンの機能作成
 function startButton() {
   retireFlag = 0;
-  getNum();
+  questionNum = parseInt(text1.value, 10);
   if (isNaN(questionNum)) {
     alert("半角数字を入力してね");
   } else {
@@ -106,8 +98,8 @@ function retireButton() {
   button2.style.display = "none";
   button3.style.display = "inline";
   timer.style.display = "block";
-  endTime = new Date();
-  processTime = (endTime - startTime) / 1000;
+  const endTime = new Date();
+  const processTime = (endTime - startTime) / 1000;
   displayTime = Math.round(processTime);
   if (retireFlag == 0) {
     timer.textContent = displayTime + "秒でリタイア";
